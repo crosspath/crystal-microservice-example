@@ -1,0 +1,22 @@
+name: bonusapp
+version: 0.1.0
+
+authors:
+  - Evgeniy Nochevnov <xpath@e1.ru>
+
+targets:
+  bonusapp:
+    main: src/bonusapp.cr
+
+crystal: 0.27.2
+
+dependencies:
+  lucky:
+    github: luckyframework/lucky
+    branch: master
+  authentic:
+    github: luckyframework/authentic
+    version: ~> 0.2
+  carbon:
+    github: luckyframework/carbon
+    version: ~> 0.1.0

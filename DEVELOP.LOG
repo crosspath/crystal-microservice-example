@@ -1,0 +1,7 @@
+shell:
+  lucky init bonusapp --api --no-auth
+
+psql:
+  create database crystal_mserv;
+  create user crystal_mserv password 'xxxxxx';
+  grant all on database crystal_mserv to crystal_mserv;
