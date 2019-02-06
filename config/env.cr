@@ -25,6 +25,6 @@ module Lucky::Env
   end
 
   def show_exceptions?
-    ENV.has_key?("SHOW_EXCEPTIONS") && ENV["SHOW_EXCEPTIONS"].to_i > 0
+    ENV.fetch("SHOW_EXCEPTIONS", "0") > "0"
   end
 end
