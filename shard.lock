@@ -1,0 +1,74 @@
+version: 1.0
+shards:
+  avram:
+    github: luckyframework/avram
+    commit: 3a8202d1846c59f6e24189e64c68cac4542cc96b
+
+  blank:
+    github: kostya/blank
+    version: 0.1.0
+
+  callback:
+    github: mosop/callback
+    version: 0.6.3
+
+  cli:
+    github: mosop/cli
+    version: 0.7.0
+
+  cry:
+    github: paulcsmith/cry
+    version: 0.4.0
+
+  db:
+    github: crystal-lang/crystal-db
+    version: 0.5.1
+
+  dotenv:
+    github: drum445/dotenv
+    version: 0.3.0
+
+  exception_page:
+    github: crystal-loot/exception_page
+    version: 0.1.2
+
+  habitat:
+    github: luckyframework/habitat
+    version: 0.4.0
+
+  lucky:
+    github: luckyframework/lucky
+    commit: eb599be295c15b6c690a8f482a8c7e80cc2ae76c
+
+  lucky_cli:
+    github: luckyframework/lucky_cli
+    commit: 2f5ea194269d9e12bc966528af143b839d8e0e98
+
+  lucky_router:
+    github: luckyframework/lucky_router
+    version: 0.2.2
+
+  optarg:
+    github: mosop/optarg
+    version: 0.5.8
+
+  pg:
+    github: will/crystal-pg
+    version: 0.15.0
+
+  shell-table:
+    github: luckyframework/shell-table.cr
+    commit: 078a04ea58ead5203bb435a3b5fff448ddabaeea
+
+  string_inflection:
+    github: mosop/string_inflection
+    version: 0.2.1
+
+  teeplate:
+    github: mosop/teeplate
+    version: 0.7.0
+
+  wordsmith:
+    github: luckyframework/wordsmith
+    version: 0.2.0
+

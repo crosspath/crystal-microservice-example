@@ -14,9 +14,7 @@ dependencies:
   lucky:
     github: luckyframework/lucky
     branch: master
-  authentic:
-    github: luckyframework/authentic
-    version: ~> 0.2
-  carbon:
-    github: luckyframework/carbon
-    version: ~> 0.1.0
+  avram:
+    github: luckyframework/avram
+  dotenv:
+    github: drum445/dotenv
