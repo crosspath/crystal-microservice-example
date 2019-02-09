@@ -41,29 +41,19 @@ class ReferralForm < Avram::VirtualForm
   end
 
   def valid?
-    @error_code = nil
-
-    unless referrer?
-      @error_code = 110
-      return false
+    @error_code = if !referrer?
+      110
+    elsif !order?
+      111
+    elsif order?.as(UserOrder).user_id == referrer?.as(User).id
+      112
+    elsif order?.as(UserOrder).bonus_log
+      113
+    else
+      nil
     end
 
-    unless order?
-      @error_code = 111
-      return false
-    end
-
-    if order?.as(UserOrder).user_id == referrer?.as(User).id
-      @error_code = 112
-      return false
-    end
-
-    if order?.as(UserOrder).bonus_log
-      @error_code = 113
-      return false
-    end
-
-    true
+    @error_code.nil?
   end
 
   def save

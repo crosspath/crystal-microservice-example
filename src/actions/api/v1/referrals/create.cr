@@ -5,12 +5,9 @@ class Api::V1::Referrals::Create < ApiAction
   param order : Int32
 
   route do
-    order    = params.get(:order)
-    referrer = params.get(:referrer)
-
     form_params = Avram::Params.new(
-      user_order_id: order.to_i32,
-      referrer_id:   referrer.to_i32
+      user_order_id: order,
+      referrer_id:   referrer
     )
 
     form = ReferralForm.new(form_params)
@@ -20,10 +17,6 @@ class Api::V1::Referrals::Create < ApiAction
 
     response_error(form.error_code || 500)
   rescue e
-    if Lucky::Env.show_exceptions?
-      response_error(500, message: e.message.as(String), trace: e.backtrace)
-    else
-      response_error(500)
-    end
+    response_error(500, e)
   end
 end

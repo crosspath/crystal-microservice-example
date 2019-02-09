@@ -16,8 +16,16 @@ abstract class ApiAction < Lucky::Action
     json result.merge(options)
   end
 
-  protected def response_error(code, **options)
-    result = {status: code, error: ApiStatus::CODES[code]}
-    json result.merge(options), Status::UnprocessableEntity
+  protected def response_error(code, exception : Exception? = nil, **options)
+    result = {status: code, error: ApiStatus::CODES[code]}.merge(options)
+
+    if exception && Lucky::Env.show_exceptions?
+      result = result.merge(
+        message: exception.as(Exception).message,
+        trace: exception.backtrace
+      )
+    end
+
+    json result, Status::UnprocessableEntity
   end
 end
