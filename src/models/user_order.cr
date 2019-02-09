@@ -2,7 +2,7 @@ require "./user.cr"
 
 class UserOrder < BaseModel
   table :user_orders do
-    has_one bonus_log : BonusLog
+    has_one bonus_log : BonusLog?
 
     belongs_to user : User
 

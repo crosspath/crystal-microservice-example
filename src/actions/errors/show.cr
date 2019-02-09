@@ -3,11 +3,11 @@ class Errors::Show < Lucky::ErrorAction
     message = "There was a problem parsing the JSON." +
               " Please check that it is formed correctly"
 
-    json Errors::ShowSerializer.new(message), status: 400
+    json Errors::ShowSerializer.new(message, 400), status: 400
   end
 
   def handle_error(error : Lucky::RouteNotFoundError)
-    json Errors::ShowSerializer.new("Not found"), status: 404
+    json Errors::ShowSerializer.new("Not found", 404), status: 404
   end
 
   def handle_error(error : Exception)
@@ -15,6 +15,6 @@ class Errors::Show < Lucky::ErrorAction
 
     message = "An unexpected error occurred"
 
-    json Errors::ShowSerializer.new(message), status: 500
+    json Errors::ShowSerializer.new(message, 500), status: 500
   end
 end

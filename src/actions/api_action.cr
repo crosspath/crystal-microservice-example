@@ -4,7 +4,7 @@ abstract class ApiAction < Lucky::Action
   before check_api_key
 
   protected def check_api_key
-    if params[:api_key] == ENV["API_KEY"]
+    if params.get?(:api_key) == ENV["API_KEY"]?
       continue
     else
       response_error(100)
