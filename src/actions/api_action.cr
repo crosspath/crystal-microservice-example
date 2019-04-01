@@ -22,7 +22,7 @@ abstract class ApiAction < Lucky::Action
     if exception && Lucky::Env.show_exceptions?
       result = result.merge(
         message: exception.as(Exception).message,
-        trace: exception.backtrace
+        trace:   exception.backtrace
       )
     end
 

@@ -2,7 +2,7 @@ version: 1.0
 shards:
   avram:
     github: luckyframework/avram
-    commit: 3a8202d1846c59f6e24189e64c68cac4542cc96b
+    version: 0.9.3
 
   blank:
     github: kostya/blank
@@ -24,6 +24,10 @@ shards:
     github: crystal-lang/crystal-db
     version: 0.5.1
 
+  dexter:
+    github: luckyframework/dexter
+    version: 0.1.1
+
   dotenv:
     github: drum445/dotenv
     version: 0.3.0
@@ -34,15 +38,15 @@ shards:
 
   habitat:
     github: luckyframework/habitat
-    version: 0.4.0
+    version: 0.4.1
 
   lucky:
     github: luckyframework/lucky
-    commit: eb599be295c15b6c690a8f482a8c7e80cc2ae76c
+    commit: 18bb4ff663ddc48439bc65892c22f27e85770d45
 
   lucky_cli:
     github: luckyframework/lucky_cli
-    commit: 2f5ea194269d9e12bc966528af143b839d8e0e98
+    version: 0.13.2
 
   lucky_router:
     github: luckyframework/lucky_router

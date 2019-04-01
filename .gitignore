@@ -1,13 +1,9 @@
-/docs/
-/lib/
-/.shards/
-*.dwarf
-/node_modules
-yarn-error.log
-/bin/lucky/
+bin/ameba
+bin/lucky*
 server
-*.dwarf
-*.local.cr
+
+lib/*
+
 .env
 
 .directory
