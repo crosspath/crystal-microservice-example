@@ -26,6 +26,6 @@ abstract class ApiAction < Lucky::Action
       )
     end
 
-    json result, Status::UnprocessableEntity
+    json result, HTTP::Status::UNPROCESSABLE_ENTITY
   end
 end

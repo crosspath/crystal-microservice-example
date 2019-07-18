@@ -1,6 +1,7 @@
 bin/ameba
 bin/lucky*
 server
+start_server
 
 lib/*
 

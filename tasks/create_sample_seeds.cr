@@ -15,7 +15,7 @@ class Db::CreateSampleSeeds < LuckyCli::Task
     # UserBox.create &.email("me@example.com")
 
     1_000.times do
-      Avram::Repo.transaction do
+      AppDatabase.transaction do
         user = UserBox.create &.email(DataGenerator.email)
 
         DataGenerator.orders_count.times do |t|

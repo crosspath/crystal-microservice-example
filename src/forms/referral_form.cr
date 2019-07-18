@@ -1,12 +1,12 @@
 require "../queries/user_query.cr"
 require "../queries/user_order_query.cr"
 
-class ReferralForm < Avram::VirtualForm
+class ReferralForm < Avram::Operation
   # unable to use `Int32?`, got error "virtual must use just one type"
   # lib/avram/src/avram/virtual.cr: line 57, sets type `Avram::Field(...)?` for fields
 
-  virtual user_order_id : Int32
-  virtual referrer_id : Int32
+  attribute user_order_id : Int32
+  attribute referrer_id : Int32
 
   getter bonuses : Float64, error_code : Int32?
 

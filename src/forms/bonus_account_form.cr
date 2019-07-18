@@ -1,3 +1,3 @@
-class BonusAccountForm < BonusAccount::BaseForm
-  fillable bonuses
+class BonusAccountForm < BonusAccount::SaveOperation
+  permit_columns bonuses
 end

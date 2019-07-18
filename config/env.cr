@@ -7,9 +7,9 @@
 # Also, this file loads once in `lucky db.migrate`.
 #
 # pp ENV["DATABASE_URL"]?
-unless ENV.has_key?("DATABASE_URL") # or "FOREMAN_WORKER_NAME"
-  Dotenv.load
-end
+# unless ENV.has_key?("DATABASE_URL") # or "FOREMAN_WORKER_NAME"
+#   Dotenv.load
+# end
 
 module Lucky::Env
   extend self

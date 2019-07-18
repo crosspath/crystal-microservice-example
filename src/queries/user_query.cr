@@ -15,7 +15,7 @@ class UserQuery < User::BaseQuery
       SELECT Min(id) AS min_id, Max(id) AS max_id
       FROM #{User::TABLE_NAME}
     SQL
-    d = Avram::Repo.run do |db|
+    d = AppDatabase.run do |db|
       # Raises `DB::Error` if there were no rows, or if there were more than one row.
       db.query_one sql, as: IdInterval
     end

@@ -2,7 +2,7 @@ version: 1.0
 shards:
   avram:
     github: luckyframework/avram
-    version: 0.9.3
+    commit: daaf55955c8131dea8533584720257ca444f23a7
 
   blank:
     github: kostya/blank
@@ -38,15 +38,15 @@ shards:
 
   habitat:
     github: luckyframework/habitat
-    version: 0.4.1
+    version: 0.4.3
 
   lucky:
     github: luckyframework/lucky
-    commit: 18bb4ff663ddc48439bc65892c22f27e85770d45
+    commit: 89f7fda4ab1fb67cf0fd7c2f8897e3ed5f4c0d81
 
   lucky_cli:
     github: luckyframework/lucky_cli
-    version: 0.13.2
+    version: 0.15.0
 
   lucky_router:
     github: luckyframework/lucky_router
@@ -58,7 +58,7 @@ shards:
 
   pg:
     github: will/crystal-pg
-    version: 0.15.0
+    version: 0.16.1
 
   shell-table:
     github: luckyframework/shell-table.cr

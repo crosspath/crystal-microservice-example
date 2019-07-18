@@ -1,14 +1,15 @@
 require "./app"
+require "./app_server"
 
 if Lucky::Env.development?
   Avram::Migrator::Runner.new.ensure_migrated!
 end
 Habitat.raise_if_missing_settings!
 
-app = App.new
-puts "Listening on #{app.base_uri}"
-app.listen
+app_server = AppServer.new
 
 Signal::INT.trap do
-  app.close
+  app_server.close
 end
+
+app_server.listen
