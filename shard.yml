@@ -1,5 +1,5 @@
 name: bonusapp
-version: 0.1.0
+version: 1.10
 
 authors:
   - Evgeniy Nochevnov <xpath@e1.ru>
@@ -8,7 +8,7 @@ targets:
   bonusapp:
     main: src/bonusapp.cr
 
-crystal: 0.27.2
+crystal: 0.30.0
 
 dependencies:
   lucky:
