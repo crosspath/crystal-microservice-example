@@ -2,7 +2,7 @@ version: 1.0
 shards:
   avram:
     github: luckyframework/avram
-    commit: 1e0b7e05f2a4a77c89a16ae0fca3606c92cb7206
+    version: 0.11.0
 
   blank:
     github: kostya/blank
@@ -14,11 +14,11 @@ shards:
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.5.1
+    version: 0.6.0
 
   dexter:
     github: luckyframework/dexter
-    version: 0.1.1
+    version: 0.1.2
 
   dotenv:
     github: drum445/dotenv
@@ -34,11 +34,11 @@ shards:
 
   lucky:
     github: luckyframework/lucky
-    commit: 454db32a4a685dd56815390fced2f8b8fb01c85b
+    commit: 14521376ec2621994ad6feef76d9c69cfe121639
 
   lucky_cli:
     github: luckyframework/lucky_cli
-    version: 0.15.0
+    version: 0.17.0
 
   lucky_router:
     github: luckyframework/lucky_router
@@ -46,15 +46,15 @@ shards:
 
   pg:
     github: will/crystal-pg
-    version: 0.16.1
+    version: 0.18.0
 
   shell-table:
     github: luckyframework/shell-table.cr
     commit: 078a04ea58ead5203bb435a3b5fff448ddabaeea
 
   teeplate:
-    github: mosop/teeplate
-    version: 0.7.0
+    github: luckyframework/teeplate
+    version: 0.8.0
 
   wordsmith:
     github: luckyframework/wordsmith

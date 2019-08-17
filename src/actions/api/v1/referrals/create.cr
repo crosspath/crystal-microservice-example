@@ -1,6 +1,8 @@
 require "../../../../forms/referral_form.cr"
 
 class Api::V1::Referrals::Create < ApiAction
+  default_format :json
+
   param referrer : Int32
   param order : Int32
 
