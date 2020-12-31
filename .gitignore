@@ -4,6 +4,7 @@ server
 start_server
 
 lib/*
+tmp
 
 .env
 

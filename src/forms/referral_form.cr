@@ -56,7 +56,7 @@ class ReferralForm < Avram::Operation
     @error_code.nil?
   end
 
-  def save
+  def run
     return false unless valid?
 
     present_referrer = referrer?.as(User)

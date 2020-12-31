@@ -12,9 +12,8 @@ class Api::V1::Referrals::Create < ApiAction
       referrer_id:   referrer
     )
 
-    form = ReferralForm.new(form_params)
-    if form.save
-      return response_success(bonuses: form.bonuses)
+    ReferralForm.run(form_params) do |form, result|
+      return response_success(bonuses: form.bonuses) if result
     end
 
     response_error(form.error_code || 500)
