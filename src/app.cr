@@ -1,6 +1,6 @@
 require "./shards"
 
-Dotenv.load
+Dotenv.load unless ENV.fetch("LUCKY_ENV", "") == "production"
 
 require "./models/base_model"
 require "./models/mixins/**"
@@ -15,3 +15,4 @@ require "./actions/**"
 require "../config/env"
 require "../config/**"
 require "../db/migrations/**"
+require "./app_server"

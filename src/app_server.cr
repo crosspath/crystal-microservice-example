@@ -8,6 +8,7 @@ class AppServer < Lucky::BaseAppServer
       # Lucky::SessionHandler.new,
       # Lucky::FlashHandler.new,
       Lucky::ErrorHandler.new(action: Errors::Show),
+      Lucky::RemoteIpHandler.new,
       Lucky::RouteHandler.new,
 
       # Disabled in API mode:

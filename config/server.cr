@@ -3,10 +3,16 @@ Lucky::Server.configure do |settings|
     settings.secret_key_base = secret_key_from_env
     settings.host = "0.0.0.0"
     settings.port = ENV["PORT"].to_i
+    settings.gzip_enabled = true
+    # By default certain content types will be gzipped.
+    # For a full list look in
+    # https://github.com/luckyframework/lucky/blob/master/src/lucky/server.cr
+    # To add additional extensions do something like this:
+    # settings.gzip_content_types << "content/type"
   else
     settings.secret_key_base = "lR1J723vYGp8F7ekU7pe20ED11HtKbyS9M1y05buQ8s="
     # Change host/port in config/watch.yml
-    # Alternatively, you can set the PORT env to set the port
+    # Alternatively, you can set the DEV_PORT env to set the port
     settings.host = Lucky::ServerSettings.host
     settings.port = Lucky::ServerSettings.port
   end
@@ -17,6 +23,7 @@ Lucky::ForceSSLHandler.configure do |settings|
   # This will cause http requests to be redirected to https:
   #
   #    settings.enabled = Lucky::Env.production?
+  #    settings.strict_transport_security = {max_age: 1.year, include_subdomains: true}
   #
   # Or, leave it disabled:
   settings.enabled = false
@@ -27,5 +34,6 @@ private def secret_key_from_env
 end
 
 private def raise_missing_secret_key_in_production
-  raise "Please set the SECRET_KEY_BASE environment variable. You can generate a secret key with 'lucky gen.secret_key'"
+  puts "Please set the SECRET_KEY_BASE environment variable. You can generate a secret key with 'lucky gen.secret_key'".colorize.red
+  exit(1)
 end
