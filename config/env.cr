@@ -14,4 +14,8 @@ module Lucky::Env
   def task?
     ENV["LUCKY_TASK"]? == "true"
   end
+
+  def show_exceptions?
+    ENV.fetch("SHOW_EXCEPTIONS", "1") == "1"
+  end
 end

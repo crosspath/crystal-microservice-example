@@ -3,8 +3,8 @@ require "../models/user.cr"
 class UserQuery < User::BaseQuery
   class IdInterval
     DB.mapping({
-      min_id: Int32,
-      max_id: Int32
+      min_id: Int64,
+      max_id: Int64
       # expected: Hash
       # should not be `max_id : Int32` (space before ':')
     })
