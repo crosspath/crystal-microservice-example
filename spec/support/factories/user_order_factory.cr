@@ -1,4 +1,4 @@
-class UserOrderBox < Avram::Box
+class UserOrderFactory < Avram::Factory
   def initialize
     user_id 1
     product "name"

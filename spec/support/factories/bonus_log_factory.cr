@@ -1,4 +1,4 @@
-class BonusLogBox < Avram::Box
+class BonusLogFactory < Avram::Factory
   def initialize
     user_order_id    1
     bonus_account_id 1

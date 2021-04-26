@@ -13,7 +13,7 @@ class UserQuery < User::BaseQuery
   def self.random
     sql = <<-SQL
       SELECT Min(id) AS min_id, Max(id) AS max_id
-      FROM #{User::TABLE_NAME}
+      FROM #{User.table_name}
     SQL
     d = AppDatabase.run do |db|
       # Raises `DB::Error` if there were no rows, or if there were more than one row.

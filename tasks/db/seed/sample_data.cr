@@ -16,10 +16,10 @@ class Db::Seed::SampleData < LuckyTask::Task
 
     1_000.times do
       AppDatabase.transaction do
-        user = UserBox.create &.email(DataGenerator.email)
+        user = UserFactory.create &.email(DataGenerator.email)
 
         DataGenerator.orders_count.times do |t|
-          order = UserOrderBox.create do |box|
+          order = UserOrderFactory.create do |box|
             box.user_id(user.id)
             box.product(DataGenerator.product)
             box.price(DataGenerator.price)
@@ -29,15 +29,15 @@ class Db::Seed::SampleData < LuckyTask::Task
             referrer = DataGenerator.referrer
             if referrer
               account = referrer.bonus_account
-              account ||= BonusAccountBox.create(&.user_id(referrer.id))
+              account ||= BonusAccountFactory.create(&.user_id(referrer.id))
 
-              log = BonusLogBox.create do |box|
+              log = BonusLogFactory.create do |box|
                 box.user_order_id(order.id)
                 box.bonus_account_id(account.id)
                 box.bonuses(order.bonus_amount)
               end
 
-              BonusAccountForm.update!(
+              BonusAccountOperation.update!(
                 account,
                 bonuses: account.bonuses + log.bonuses
               )

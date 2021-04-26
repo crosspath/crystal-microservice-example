@@ -1,7 +1,7 @@
 require "../queries/user_query.cr"
 require "../queries/user_order_query.cr"
 
-class ReferralForm < Avram::Operation
+class ReferralOperation < Avram::Operation
   # unable to use `Int32?`, got error "virtual must use just one type"
   # lib/avram/src/avram/virtual.cr: line 57, sets type `Avram::Field(...)?` for fields
 
@@ -63,14 +63,14 @@ class ReferralForm < Avram::Operation
     present_order    = order?.as(UserOrder)
 
     account = present_referrer.bonus_account
-    account ||= BonusAccountForm.create!(
+    account ||= BonusAccountOperation.create!(
       user_id: present_referrer.id,
       bonuses: 0.0
     )
 
     @bonuses = present_order.bonus_amount
 
-    BonusLogForm.create!(
+    BonusLogOperation.create!(
       bonus_account_id: account.id,
       user_order_id: present_order.id,
       bonuses: @bonuses

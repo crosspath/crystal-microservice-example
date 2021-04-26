@@ -1,4 +1,4 @@
-class UserBox < Avram::Box
+class UserFactory < Avram::Factory
   def initialize
     email "test@mail.org"
   end
