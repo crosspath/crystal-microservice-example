@@ -1,3 +1,7 @@
+# Here is where you configure the Lucky server
+#
+# Look at config/route_helper.cr if you want to change the domain used when
+# generating links with `Action.url`.
 Lucky::Server.configure do |settings|
   if Lucky::Env.production?
     settings.secret_key_base = secret_key_from_env
@@ -12,14 +16,27 @@ Lucky::Server.configure do |settings|
   else
     settings.secret_key_base = "lR1J723vYGp8F7ekU7pe20ED11HtKbyS9M1y05buQ8s="
     # Change host/port in config/watch.yml
-    # Alternatively, you can set the DEV_PORT env to set the port
+    # Alternatively, you can set the DEV_PORT env to set the port for local development
     settings.host = Lucky::ServerSettings.host
     settings.port = Lucky::ServerSettings.port
   end
+
+  # By default Lucky will serve static assets in development and production.
+  #
+  # However you could use a CDN when in production like this:
+  #
+  #   Lucky::Server.configure do |settings|
+  #     if Lucky::Env.production?
+  #       settings.asset_host = "https://mycdnhost.com"
+  #     else
+  #       settings.asset_host = ""
+  #     end
+  #   end
+  settings.asset_host = "" # Lucky will serve assets
 end
 
 Lucky::ForceSSLHandler.configure do |settings|
-  # To force SSL in production, uncomment the line below.
+  # To force SSL in production, uncomment the lines below.
   # This will cause http requests to be redirected to https:
   #
   #    settings.enabled = Lucky::Env.production?

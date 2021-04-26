@@ -1,17 +1,22 @@
 name: bonusapp
-version: 1.11
+version: 1.12
 
 authors:
-  - Evgeniy Nochevnov <xpath@e1.ru>
+  - Evgeniy Nochevnov <for-spam@nochevnov.ru>
 
 targets:
   bonusapp:
     main: src/bonusapp.cr
 
-crystal: 0.35.1
+crystal: 1.0.0
 
 dependencies:
   lucky:
     github: luckyframework/lucky
+    version: ~> 0.27.0
   dotenv:
     github: gdotdesign/cr-dotenv
+    version: ~> 1.0.0
+  lucky_task:
+    github: luckyframework/lucky_task
+    version: ~> 0.1.0

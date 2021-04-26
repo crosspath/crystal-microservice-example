@@ -1,18 +1,18 @@
-require "../../../spec/support/boxes/**"
+require "../../../spec/support/factories/**"
 require "../../../spec/support/data_generator.cr"
 
 # Add sample data helpful for development, e.g. (fake users, blog posts, etc.)
 #
 # Use `Db::Seed::RequiredData` if you need to create data *required* for your
 # app to work.
-class Db::Seed::SampleData < LuckyCli::Task
+class Db::Seed::SampleData < LuckyTask::Task
   summary "Add sample database records helpful for development"
 
   def call
-    # Using a LuckyRecord::Box:
+    # Using a Avram::Factory:
     #
     # Use the defaults, but override just the email
-    # UserBox.create &.email("me@example.com")
+    # UserFactory.create &.email("me@example.com")
 
     1_000.times do
       AppDatabase.transaction do
@@ -53,7 +53,9 @@ class Db::Seed::SampleData < LuckyCli::Task
 
     # Using a form:
     #
-    # UserForm.create!(email: "me@example.com", name: "Jane")
+    # unless UserQuery.new.email("me@example.com").first?
+    #  SaveUser.create!(email: "me@example.com", name: "Jane")
+    # end
     puts "Done adding sample data"
   end
 end

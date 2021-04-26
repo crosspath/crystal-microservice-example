@@ -15,7 +15,8 @@ class AppServer < Lucky::BaseAppServer
       Lucky::RouteHandler.new,
 
       # Disabled in API mode:
-      # Lucky::StaticFileHandler.new("./public", false),
+      # Lucky::StaticCompressionHandler.new("./public", file_ext: "gz", content_encoding: "gzip"),
+      # Lucky::StaticFileHandler.new("./public", fallthrough: false, directory_listing: false),
       Lucky::RouteNotFoundHandler.new,
     ] of HTTP::Handler
   end

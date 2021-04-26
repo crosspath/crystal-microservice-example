@@ -29,7 +29,7 @@ Initialise database for this microservice:
 
 ```
 lucky db.migrate
-lucky db.create_sample_seeds
+lucky db.seed.sample_data
 ```
 
 Run server:
