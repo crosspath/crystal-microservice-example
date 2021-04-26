@@ -1,19 +1,19 @@
 require "./../../src/queries/user_query.cr"
 
 module DataGenerator
-  ALPHA = ('a'..'z').to_a
+  ALPHA     = ('a'..'z').to_a
   ALPHA_NUM = ALPHA + (0..9).to_a
 
   extend self
 
   def email
-    name_length   = rand(18) + 2
+    name_length = rand(18) + 2
     domain_length = rand(12) + 2
-    zone_length   = rand(4)  + 2
+    zone_length = rand(4) + 2
 
-    name   = name_length.times.map   { |t| ALPHA_NUM.sample }.join
+    name = name_length.times.map { |t| ALPHA_NUM.sample }.join
     domain = domain_length.times.map { |t| ALPHA_NUM.sample }.join
-    zone   = zone_length.times.map   { |t| ALPHA.sample }.join
+    zone = zone_length.times.map { |t| ALPHA.sample }.join
 
     "#{name}@#{domain}.#{zone}"
   end

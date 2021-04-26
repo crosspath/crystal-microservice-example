@@ -11,9 +11,9 @@ class ReferralOperation < Avram::Operation
   getter bonuses : Float64, error_code : Int32?
 
   @referrer : User?
-  @order    : UserOrder?
+  @order : UserOrder?
 
-  @bonuses    = 0.0
+  @bonuses = 0.0
   @error_code = nil
 
   def referrer?
@@ -41,17 +41,18 @@ class ReferralOperation < Avram::Operation
   end
 
   def valid?
-    @error_code = if !referrer?
-      110
-    elsif !order?
-      111
-    elsif order?.as(UserOrder).user_id == referrer?.as(User).id
-      112
-    elsif order?.as(UserOrder).bonus_log
-      113
-    else
-      nil
-    end
+    @error_code =
+      if !referrer?
+        110
+      elsif !order?
+        111
+      elsif order?.as(UserOrder).user_id == referrer?.as(User).id
+        112
+      elsif order?.as(UserOrder).bonus_log
+        113
+      else
+        nil
+      end
 
     @error_code.nil?
   end
@@ -60,7 +61,7 @@ class ReferralOperation < Avram::Operation
     return false unless valid?
 
     present_referrer = referrer?.as(User)
-    present_order    = order?.as(UserOrder)
+    present_order = order?.as(UserOrder)
 
     account = present_referrer.bonus_account
     account ||= BonusAccountOperation.create!(

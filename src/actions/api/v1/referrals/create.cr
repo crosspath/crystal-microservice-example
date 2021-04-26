@@ -9,7 +9,7 @@ class Api::V1::Referrals::Create < ApiAction
   route do
     form_params = Avram::Params.new(
       user_order_id: order,
-      referrer_id:   referrer
+      referrer_id: referrer
     )
 
     operation = nil

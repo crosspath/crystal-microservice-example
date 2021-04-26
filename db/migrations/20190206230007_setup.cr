@@ -30,8 +30,8 @@ class Setup::V20190206230007 < Avram::Migrator::Migration::V1
     end
 
     execute(
-        "COMMENT ON COLUMN #{BonusLog.table_name}.bonus_account_id IS "+
-        "'Who will receive bonus for inviting new user with this UserOrder?'"
+      "COMMENT ON COLUMN #{BonusLog.table_name}.bonus_account_id IS " +
+      "'Who will receive bonus for inviting new user with this UserOrder?'"
     )
   end
 
