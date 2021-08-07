@@ -23,7 +23,7 @@ abstract class ApiAction < Lucky::Action
   protected def response_error(code, exception : Exception? = nil, **options)
     result = {status: code, error: ApiStatus::CODES[code]}.merge(options)
 
-    if exception && Lucky::Env.show_exceptions?
+    if exception && LuckyEnv.show_exceptions?
       result = result.merge(
         message: exception.as(Exception).message,
         trace: exception.backtrace

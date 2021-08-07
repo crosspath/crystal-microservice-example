@@ -6,7 +6,7 @@ class Api::V1::Referrals::Create < ApiAction
   param referrer : Int32
   param order : Int32
 
-  route do
+  post "/api/v1/referrals" do
     form_params = Avram::Params.new(
       user_order_id: order,
       referrer_id: referrer
@@ -14,8 +14,9 @@ class Api::V1::Referrals::Create < ApiAction
 
     operation = nil
 
-    ReferralOperation.run(form_params) do |operation, result|
-      return response_success(bonuses: operation.bonuses) if result
+    ReferralOperation.run(form_params) do |result, saved|
+      operation = result
+      return response_success(bonuses: result.bonuses) if saved
     end
 
     response_error(operation ? operation.error_code : 500)
