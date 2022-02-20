@@ -1,5 +1,5 @@
 name: bonusapp
-version: 1.13
+version: 1.14
 
 authors:
   - Evgeniy Nochevnov <for-spam@nochevnov.ru>
@@ -8,7 +8,7 @@ targets:
   bonusapp:
     main: src/bonusapp.cr
 
-crystal: 1.1.1
+crystal: 1.3.2
 
 dependencies:
   lucky:
@@ -16,6 +16,7 @@ dependencies:
     version: ~> 0.28.0
   lucky_task:
     github: luckyframework/lucky_task
-    version: ~> 0.1.0.
+    version: ~> 0.1.0
   lucky_env:
     github: luckyframework/lucky_env
+    version: ~> 0.1.4
