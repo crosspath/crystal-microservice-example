@@ -26,4 +26,7 @@ Avram.configure do |settings|
   # Always parse `Time` values with these specific formats.
   # Used for both database values, and datetime input fields.
   # settings.time_formats << "%F"
+
+  # Disable query cache during tests
+  settings.query_cache_enabled = !LuckyEnv.test?
 end

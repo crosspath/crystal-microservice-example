@@ -13,12 +13,6 @@ source script/helpers/function_helpers
 #   * Note: Booting additional processes for things like mail, background jobs, etc...
 #     should go in your Procfile.dev.
 
-
-# Only if this isn't CI
-if [ -z "$CI" ]; then
-  lucky ensure_process_runner_installed
-fi
-
 if command_not_found "createdb"; then
   MSG="Please install the postgres CLI tools, then try again."
   if is_mac; then
@@ -35,5 +29,3 @@ fi
 # if command_not_running "redis-cli ping"; then
 #   print_error "Redis is not running."
 # fi
-
-

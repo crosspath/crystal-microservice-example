@@ -5,8 +5,8 @@ class ReferralOperation < Avram::Operation
   # unable to use `Int32?`, got error "virtual must use just one type"
   # lib/avram/src/avram/virtual.cr: line 57, sets type `Avram::Field(...)?` for fields
 
-  attribute user_order_id : Int32
-  attribute referrer_id : Int32
+  attribute user_order_id : Array(String)
+  attribute referrer_id : Array(String)
 
   getter bonuses : Float64, error_code : Int32?
 
@@ -18,12 +18,12 @@ class ReferralOperation < Avram::Operation
 
   def referrer?
     @referrer ||= begin
-      # referrer_id is Avram::FillableField(Int32 | Nil)
+      # referrer_id is Avram::FillableField(Array(Int32) | Nil)
       value = referrer_id.value
       if value.nil?
         nil
       else
-        UserQuery.new.id(value.as(Int32)).preload_bonus_account.first?
+        UserQuery.new.id(value.as(Array(String))[0]).preload_bonus_account.first?
       end
     end
   end
@@ -35,7 +35,7 @@ class ReferralOperation < Avram::Operation
       if value.nil?
         nil
       else
-        UserOrderQuery.new.id(value.as(Int32)).preload_bonus_log.first?
+        UserOrderQuery.new.id(value.as(Array(String))[0]).preload_bonus_log.first?
       end
     end
   end

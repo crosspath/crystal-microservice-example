@@ -2,11 +2,15 @@ version: 2.0
 shards:
   avram:
     git: https://github.com/luckyframework/avram.git
-    version: 0.21.1
+    version: 1.0.0-rc1
 
   backtracer:
     git: https://github.com/sija/backtracer.cr.git
-    version: 1.2.1
+    version: 1.2.2
+
+  cadmium_transliterator:
+    git: https://github.com/cadmiumcr/transliterator.git
+    version: 0.1.0+git.commit.46c4c14594057dbcfaf27e7e7c8c164d3f0ce3f1
 
   cry:
     git: https://github.com/luckyframework/cry.git
@@ -14,15 +18,15 @@ shards:
 
   db:
     git: https://github.com/crystal-lang/crystal-db.git
-    version: 0.10.1
+    version: 0.11.0
 
   dexter:
     git: https://github.com/luckyframework/dexter.git
-    version: 0.3.3
+    version: 0.3.4
 
   exception_page:
     git: https://github.com/crystal-loot/exception_page.git
-    version: 0.2.2
+    version: 0.3.0
 
   habitat:
     git: https://github.com/luckyframework/habitat.git
@@ -30,7 +34,11 @@ shards:
 
   lucky:
     git: https://github.com/luckyframework/lucky.git
-    version: 0.28.0
+    version: 1.0.0-rc1
+
+  lucky_cache:
+    git: https://github.com/luckyframework/lucky_cache.git
+    version: 0.1.1
 
   lucky_env:
     git: https://github.com/luckyframework/lucky_env.git
@@ -46,15 +54,19 @@ shards:
 
   pg:
     git: https://github.com/will/crystal-pg.git
-    version: 0.24.0
+    version: 0.26.0
 
   pulsar:
     git: https://github.com/luckyframework/pulsar.git
-    version: 0.2.2
+    version: 0.2.3
 
   shell-table:
     git: https://github.com/luckyframework/shell-table.cr.git
-    version: 0.9.3+git.commit.fefbc8b19d18630660b2653de755217597808b1b
+    version: 0.9.3
+
+  splay_tree_map:
+    git: https://github.com/wyhaines/splay_tree_map.cr.git
+    version: 0.2.2
 
   teeplate:
     git: https://github.com/luckyframework/teeplate.git
@@ -62,5 +74,5 @@ shards:
 
   wordsmith:
     git: https://github.com/luckyframework/wordsmith.git
-    version: 0.3.0
+    version: 0.4.0
 

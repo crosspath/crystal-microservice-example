@@ -3,14 +3,14 @@ require "../../../../operations/referral_operation.cr"
 class Api::V1::Referrals::Create < ApiAction
   default_format :json
 
-  param referrer : Int32
-  param order : Int32
+  param referrer : String
+  param order : String
 
   post "/api/v1/referrals" do
-    form_params = Avram::Params.new(
-      user_order_id: order,
-      referrer_id: referrer
-    )
+    form_params = Avram::Params.new({
+      "user_order_id" => [order],
+      "referrer_id" => [referrer]
+    })
 
     operation = nil
 

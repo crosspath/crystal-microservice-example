@@ -23,7 +23,11 @@ shards install
 
 Configurate: copy file `.env.template` to `.env` & replace params `LUCKY_ENV`, `DATABASE_URL` & `API_KEY`
 
-Create database & user (optional)
+Create database:
+
+```
+lucky db.create
+```
 
 Initialise database for this microservice:
 
