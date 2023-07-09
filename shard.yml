@@ -1,5 +1,5 @@
 name: bonusapp
-version: 1.15
+version: 1.16
 
 authors:
   - Evgeniy Nochevnov <for-spam@nochevnov.ru>
@@ -8,15 +8,15 @@ targets:
   bonusapp:
     main: src/bonusapp.cr
 
-crystal: 1.6.2
+crystal: 1.8.2
 
 dependencies:
   avram:
     github: luckyframework/avram
-    version: ~> 1.0.0-rc1
+    version: ~> 1.0.0
   lucky:
     github: luckyframework/lucky
-    version: ~> 1.0.0-rc1
+    version: ~> 1.0.0
   lucky_task:
     github: luckyframework/lucky_task
     version: ~> 0.1.1
